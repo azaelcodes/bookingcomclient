@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-0": {
-            "AzaelCodes\\BookingComClient": "src/"
+            "AzaelCodes\\BookingComClient\\": "src/"
         }
     }
 }
