@@ -1,7 +1,7 @@
 <?php
 namespace AzaelCodes\BookingComClient;
 
-class Http
+class Http extends Config
 {
     /**
      * @param $url
