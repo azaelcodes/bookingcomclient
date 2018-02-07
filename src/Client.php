@@ -2,11 +2,12 @@
 namespace AzaelCodes\BookingComClient;
 use AzaelCodes\BookingComClient\Http as Http;
 
-class Client
+class Client extends Config
 {
     private $username;
     private $password;
     private $apiUrl;
+    private $config;
 
     const API_URL       = 'https://distribution-xml.booking.com/';
     const API_VERSION   = '2.0';
@@ -24,9 +25,9 @@ class Client
     public function buildAuthCredentials()
     {
         // Read from a config file
-        $credentials = [];
-        $this->username = $credentials['username'];
-        $this->password = $credentials['password'];
+        $this->config = $this->getConfig();
+        $this->username = $this->config['username'];
+        $this->password = $this->config['password'];
     }
 
     /**

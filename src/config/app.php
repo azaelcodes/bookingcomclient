@@ -1,6 +1,7 @@
 <?php
 return [
     
-    'app' => 'value'
+    'username'            => 'username',
+    'password'            => 'password'
     
 ];
