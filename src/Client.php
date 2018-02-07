@@ -1,4 +1,7 @@
 <?php
+namespace AzaelCodes\BookingComClient;
+use AzaelCodes\BookingComClient\Http as Http;
+
 class Client
 {
     private $username;
