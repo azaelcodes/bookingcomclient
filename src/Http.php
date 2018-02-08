@@ -4,6 +4,7 @@ namespace AzaelCodes\BookingComClient;
 class Http
 {
     /**
+     * GET
      * @param $url
      * @param array $headers
      * @return array

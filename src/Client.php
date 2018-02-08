@@ -1,7 +1,5 @@
 <?php
 namespace AzaelCodes\BookingComClient;
-use AzaelCodes\BookingComClient\Http as Http;
-
 class Client extends Config
 {
     private $username;
@@ -20,12 +18,20 @@ class Client extends Config
     }
 
     /**
-     * Set the API credentials, obtained from the Config files.
+     * buildAuthCredentials
+     *
+     * set username and password that are found in
+     * the config file.
      */
     public function buildAuthCredentials()
     {
-        // Read from a config file
-        $this->config = $this->getConfig();
+        /*
+         * Change to $this->getConfig() when ready for production.
+         * You might also need to create a dev.php file in the config/
+         * folder, this should be a copy of app.php but with your dev
+         * environment
+         */
+        $this->config = $this->getDevConfig();
         $this->username = $this->config['username'];
         $this->password = $this->config['password'];
     }
@@ -45,7 +51,11 @@ class Client extends Config
     {
         return $this->apiUrl;
     }
-    
+
+    /**
+     * Booking.com uses Basic Authentication for their API access.
+     * @return array
+     */
     public function getHeaderWithBasicAuthentication()
     {
         $headers = [
