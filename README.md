@@ -4,14 +4,17 @@ Access Booking.com Hotel data using their API
 Access: https://developers.booking.com
 
 # Simple Usage
-``` $hotel = new \AzaelCodes\BookingComClient\Hotel();
+``` 
+$hotel = new \AzaelCodes\BookingComClient\Hotel();
 $data = $hotel->getHotelByDestinationId('20088325', 1)
 ```
+
+`getHotelByDestinationId` accepts destinationId and number of records to return.
+
 
 ``output from $data in json format``
 
 ```
-
 [
     {
         "hotel_id": 21985,
@@ -66,7 +69,6 @@ $data = $hotel->getHotelByDestinationId('20088325', 1)
         }
     }
 ]
-
 ```
 
 Work in Progress ...
