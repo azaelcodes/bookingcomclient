@@ -16,7 +16,7 @@ $hotel = new \AzaelCodes\BookingComClient\Hotel();
 $data = $hotel->getHotelByDestinationId('20088325', 1)
 ```
 
-`getHotelByDestinationId` accepts destinationId and number of records to return.
+`getHotelByDestinationId` accepts destination ID and number of hotels to return.
 
 
 ``output from $data in json format``
