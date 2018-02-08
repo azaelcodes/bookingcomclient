@@ -3,13 +3,14 @@
 Access Booking.com Hotel data using their API
 Access: https://developers.booking.com
 
-# Simple Usage
+# First Steps
 First you must set your API username and password (Given by booking.com), go to
 `src/config/app.php` to do so.
 
 You might also need to change the configuration file path from `getDevConfig` to `getConfig`, inside
  the `Client.php` constructor
 
+# Usage
 ``` 
 $hotel = new \AzaelCodes\BookingComClient\Hotel();
 $data = $hotel->getHotelByDestinationId('20088325', 1)
