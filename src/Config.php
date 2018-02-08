@@ -5,6 +5,6 @@ class Config
 {
     public function getConfig()
     {
-        return require 'config/app.php';
+        return require 'config/dev.php';
     }
 }

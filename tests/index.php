@@ -1,3 +1,4 @@
 <?php
 require '../vendor/autoload.php';
-$apiClient = new \AzaelCodes\BookingComClient\Client();
+$hotel = new \AzaelCodes\BookingComClient\Hotel();
+print_r($hotel->getHotelByDestinationId('20088325', 1));
