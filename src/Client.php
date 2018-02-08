@@ -45,21 +45,23 @@ class Client extends Config
     {
         return $this->apiUrl;
     }
-
-    /**
-     * @param array $requestedInfo
-     * @return array
-     */
-    public function getHotelData(array $requestedInfo)
+    
+    public function getHeaderWithBasicAuthentication()
     {
         $headers = [
             'Content-Type:application/json',
             'Authorization: Basic ' . base64_encode($this->username . ':' . $this->password),
             'cache-control: no-cache'
         ];
-        $url = $this->getBookingApiUrl() . '/hotels?' . http_build_query($requestedInfo);
-        $request = Http::get($url, $headers);
-        $data = $request['code'] == 200 ? $request['response']['result'] : null;
-        return $data;
+        return $headers;
+    }
+
+    /**
+     * @param $request
+     * @return bool
+     */
+    public function isResponseOK($request)
+    {
+        return $request['code'] == 200;
     }
 }
